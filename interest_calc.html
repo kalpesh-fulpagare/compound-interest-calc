@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Compound Interest Calculator</title>
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css"> -->
+        <style type="text/css">
+          .dn{display: none;}
+        </style>
+    </head>
+
+    <body>
+      <nav class="navbar navbar-default">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <span class="navbar-brand" href="#">Interest Calculator</span>
+          </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div class="alert alert-info">
+              <b>Formula:</b> <br><strong>A = P(1 + r/n)^nt</strong>
+            </div>
+            <form>
+              <h5 class="page-header"></h5>
+              <div class="form-group">
+                <label for="inp1">Principal amount(P)</label>
+                <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp1" placeholder="Principal amount">
+              </div>
+              <div class="form-group">
+                <label for="inp2">Rate of Interest(r)</label>
+                <input onkeydown="calculateInterest()" type="text" class="form-control" id="inp2" placeholder="Rate of Interest">
+              </div>
+              <div class="form-group">
+                <label for="inp3">Interest calculation(n)</label>
+                <select id="inp3" class="form-control" onchange="calculateInterest()">
+                  <option value="12">Monthly(1 month interval)</option>
+                  <option value="6">Bi-Monthly(2 months interval)</option>
+                  <option value="4">Quarterly(3 months interval)</option>
+                  <option value="2">Semi Annually(6 months interval)</option>
+                  <option value="1">Annually(once in 12 months)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inp4">Investment for no. of years(t)</label>
+                <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp4" placeholder="Investment period">
+              </div>
+              <a href="javascript:void(0);" class="btn btn-primary" onclick="calculateInterest()">Calculate</a>
+              <hr>
+              <table class="table table-bordered" id="result" style="display: none;">
+                <tr>
+                  <td>Final Amount:</td>
+                  <td>Interest Earned:</td>
+                  <td>Principal:</td>
+                </tr>
+                <tr>
+                  <th id="a_view"></th>
+                  <th id="i_view"></th>
+                  <th id="p_view"></th>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        function calculateInterest(){var e=document.getElementById("inp1").value,t=parseFloat(e);if(isNaN(t)&&""!==e)return alert("Please enter correct principal amount"),!1;var r=document.getElementById("inp2").value,a=parseFloat(r);if(isNaN(a)&&""!==r)return alert("Please enter correct rate of interest"),!1;a=(a/100).toFixed(3);var l=document.getElementById("inp4").value,i=parseFloat(l);if(isNaN(i)&&""!==l)return alert("Please enter correct investment period"),!1;n=document.getElementById("inp3").value;var d=n*i,o=1+a/n,u=t*Math.pow(o,d);u=u.toFixed(2),document.getElementById("i_view").innerHTML=(u-t).toFixed(2),document.getElementById("p_view").innerHTML=t,isNaN(u)?document.getElementById("result").style.display="none":(document.getElementById("result").style.display="table",document.getElementById("a_view").innerHTML=u)}
+      </script>
+    </body>
+</html>
+
