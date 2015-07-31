@@ -28,11 +28,11 @@
                 <form>
                   <div class="form-group">
                     <label for="inp1">Principal amount(P)</label>
-                    <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp1" placeholder="Principal amount">
+                    <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp1" placeholder="e.g. for 2 lacs enter 200000">
                   </div>
                   <div class="form-group">
                     <label for="inp2">Rate of Interest(r)</label>
-                    <input onkeydown="calculateInterest()" type="text" class="form-control" id="inp2" placeholder="Rate of Interest">
+                    <input onkeydown="calculateInterest()" type="text" class="form-control" id="inp2" placeholder="e.g For 8% enter 8">
                   </div>
                   <div class="form-group">
                     <label for="inp3">Interest calculation(n)</label>
@@ -65,7 +65,7 @@
                       <option value="21">21 years</option>
                     </select>
                   </div>
-                  <a href="javascript:void(0);" class="btn btn-primary" onclick="calculateInterest(true)">Calculate</a>
+                  <a href="javascript:void(0);" class="btn btn-primary btn-sm" onclick="calculateInterest(true)">Calculate</a>
                   <hr>
                   <table class="table table-bordered" id="result" style="display: none;">
                     <tr>
