@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Compound Interest Calculator</title>
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap_darkly.min.css">
         <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css"> -->
         <style type="text/css">
           .dn{display: none;}
@@ -28,25 +28,25 @@
               <h5 class="page-header"></h5>
               <div class="form-group">
                 <label for="inp1">Principal amount(P)</label>
-                <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp1" placeholder="Principal amount">
+                <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp1" placeholder="Principal amount (e.g. For 2 lacs enter 200000)">
               </div>
               <div class="form-group">
                 <label for="inp2">Rate of Interest(r)</label>
-                <input onkeydown="calculateInterest()" type="text" class="form-control" id="inp2" placeholder="Rate of Interest">
+                <input onkeydown="calculateInterest()" type="text" class="form-control" id="inp2" placeholder="Rate of Interest(e.g For 8% enter 8)">
               </div>
               <div class="form-group">
                 <label for="inp3">Interest calculation(n)</label>
                 <select id="inp3" class="form-control" onchange="calculateInterest()">
                   <option value="12">Monthly(1 month interval)</option>
                   <option value="6">Bi-Monthly(2 months interval)</option>
-                  <option value="4">Quarterly(3 months interval)</option>
+                  <option value="4">Quarterly(4 months interval)</option>
                   <option value="2">Semi Annually(6 months interval)</option>
                   <option value="1">Annually(once in 12 months)</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inp4">Investment for no. of years(t)</label>
-                <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp4" placeholder="Investment period">
+                <input onkeyup="calculateInterest()" type="text" class="form-control" id="inp4" placeholder="Investment period(e.g. For 8 years enter 8">
               </div>
               <a href="javascript:void(0);" class="btn btn-primary" onclick="calculateInterest()">Calculate</a>
               <hr>
