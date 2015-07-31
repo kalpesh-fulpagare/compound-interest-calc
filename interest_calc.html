@@ -39,7 +39,7 @@
                     <select id="inp3" class="form-control" onchange="calculateInterest()">
                       <option value="12">Monthly(1 month interval)</option>
                       <option value="6">Bi-Monthly(2 months interval)</option>
-                      <option value="4">Quarterly(3 months interval)</option>
+                      <option value="4">Quarterly(4 months interval)</option>
                       <option value="2">Semi Annually(6 months interval)</option>
                       <option value="1">Annually(once in 12 months)</option>
                     </select>
@@ -65,7 +65,7 @@
                       <option value="21">21 years</option>
                     </select>
                   </div>
-                  <a href="javascript:void(0);" class="btn btn-primary" onclick="calculateInterest()">Calculate</a>
+                  <a href="javascript:void(0);" class="btn btn-primary" onclick="calculateInterest(true)">Calculate</a>
                   <hr>
                   <table class="table table-bordered" id="result" style="display: none;">
                     <tr>
@@ -86,22 +86,7 @@
             </div>
           </div>
           <script type="text/javascript">
-            function calculateInterest() {
-                var e = document.getElementById("inp1").value,
-                    t = parseFloat(e);
-                if (isNaN(t) && "" !== e) return alert("Please enter correct principal amount"), !1;
-                var r = document.getElementById("inp2").value,
-                    a = parseFloat(r);
-                if (isNaN(a) && "" !== r) return alert("Please enter correct rate of interest"), !1;
-                a = (a / 100).toFixed(3);
-                var l = document.getElementById("inp4").value,
-                    i = parseFloat(l);
-                n = document.getElementById("inp3").value;
-                var d = n * i,
-                    o = 1 + a / n,
-                    u = t * Math.pow(o, d);
-                u = u.toFixed(2), document.getElementById("i_view").innerHTML = (u - t).toFixed(2), document.getElementById("p_view").innerHTML = t, isNaN(u) ? document.getElementById("result").style.display = "none" : (document.getElementById("result").style.display = "table", document.getElementById("a_view").innerHTML = u)
-            }
+            function calculateInterest(e){var t=document.getElementById("inp1").value,l=parseFloat(t);if(isNaN(l)&&""!==t)return alert("Please enter correct principal amount"),!1;var a=document.getElementById("inp2").value,r=parseFloat(a);if(isNaN(r)&&""!==a)return alert("Please enter correct rate of interest"),!1;r=(r/100).toFixed(3);var o=document.getElementById("inp4").value,i=parseFloat(o);n=document.getElementById("inp3").value;var d=n*i,u=1+r/n,c=l*Math.pow(u,d);c=c.toFixed(2),document.getElementById("i_view").innerHTML=(c-l).toFixed(2),document.getElementById("p_view").innerHTML=l,isNaN(c)?document.getElementById("result").style.display="none":(document.getElementById("result").style.display="table",document.getElementById("a_view").innerHTML=c,e&&window.scrollTo(0,document.body.scrollHeight))}
           </script>
         </body>
     </html>
